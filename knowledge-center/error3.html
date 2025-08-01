@@ -12,6 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uswds/3.13.0/js/uswds.min.js" defer></script>
 
 
+
+
   </head>
 
 
@@ -121,7 +123,7 @@
     <div class="usa-navbar">
       <div class="usa-logo" id="basic-logo">
         <em class="usa-logo__text">
-          <a href="./index.html" title="TDP Project Updates">
+          <a href="./index3.html" title="TDP Project Updates">
             TANF Data Portal
           </a>
         </em>
@@ -177,6 +179,8 @@
                        <label class="usa-label" for="options"><strong>Section</strong></label>
   <select class="usa-select" name="options" id="options">
     <option value="value1">Section 1 - Active Case Data</option>
+        <option value="value2">Section 3 - Aggregate Data</option>
+
   </select>
      </div> 
 
@@ -191,7 +195,7 @@
 
         <hr style="margin-bottom: 8px;">       
 
-                  <a class="usa-button usa-button--outline" href="" type="button" style=" margin-bottom: 32px; text-decoration: none;">🞃 Show detail for all errors</a>                  <a class="usa-button usa-button--outline" href="" type="button" style=" margin-bottom: 32px; text-decoration: none;">🞁 Hide detail for all errors</a>
+                  <button class="usa-button usa-button--outline" href="" type="button" style=" margin-bottom: 32px; text-decoration: none;" id="expandAll">🞃 Show detail for all errors</button>                  <button class="usa-button usa-button--outline" href="" type="button" style=" margin-bottom: 32px; text-decoration: none;" id="hideAll">🞁 Hide detail for all errors</button>
 
                           <hr style="margin-bottom: 32px; margin-top: -8px;">       
 
@@ -312,13 +316,12 @@
       aria-expanded="false"
       aria-controls="m-a2"
     >
-      Second Amendment
+      012345689 | 3 Errors
     </button>
   </h4>
   <div id="m-a2" class="usa-accordion__content usa-prose">
     <p>
-      A well regulated Militia, being necessary to the security of a free State,
-      the right of the people to keep and bear Arms, shall not be infringed.
+     sdfsdfsfsfsfdsfsdf
     </p>
     <ul>
       <li>This is a list item</li>
@@ -341,6 +344,56 @@
   </div>
 
   <footer class="usa-footer usa-footer--slim">
+
+<script>
+  document.getElementById("expandAll").addEventListener("click", function() {
+   console.log("HUH");
+    document.querySelectorAll("[aria-expanded]").forEach(function(el) {
+      el.setAttribute("aria-expanded", "true");
+  document.querySelectorAll("[hidden]").forEach(function(el) {
+        el.removeAttribute("hidden");
+      });
+
+    });
+  });
+</script>
+<script>
+  document.getElementById("hideAll").addEventListener("click", function() {
+       console.log("HUHDE");
+    document.querySelectorAll("[aria-expanded]").forEach(function(el) {
+      el.setAttribute("aria-expanded", "false");
+            document.querySelectorAll("[hidden]").forEach(function(el) {
+        el.setAttribute("hidden", "");
+      });
+
+    });
+  });
+</script>
+
+<button id="toggleAll">Toggle All</button>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("toggleAll").addEventListener("click", function() {
+      document.querySelectorAll("[aria-expanded]").forEach(function(el) {
+        const current = el.getAttribute("aria-expanded") === "true";
+        el.setAttribute("aria-expanded", String(!current));
+      });
+
+      document.querySelectorAll("[hidden], [aria-expanded]").forEach(function(el) {
+        if (el.hasAttribute("hidden")) {
+          el.removeAttribute("hidden");
+        } else {
+          el.setAttribute("hidden", "");
+        }
+      });
+
+      console.log("Toggled all elements!");
+    });
+  });
+</script>
+
+
   <div class="grid-container usa-footer__return-to-top">
     <a href="#">Return to top</a>
   </div>
