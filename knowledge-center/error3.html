@@ -4,11 +4,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>TANF Data Portal</title>
-    <link rel="stylesheet" href="../css/uswds3.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uswds/3.13.0/css/uswds.min.css" />
     <link rel="icon" type="image/x-icon" href="../img/favicons/gov-favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="../js/uswds.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uswds/3.13.0/js/uswds.min.js" defer></script>
+
 
   </head>
 
@@ -163,18 +165,22 @@
                   <a class="usa-button usa-button--outline" href="complete3.html" type="button" style=" margin-bottom: 32px; text-decoration: none;">🞀 Back to TANF Data Files</a>
 
         <h1>Error Report</h1>
-        <div style="min-height: 22px;"></div>
-   <h2 style="font-size: 18px;">Reporting Period</h2>
-         <p style="font-size: 24px; font-weight: 800;">Fiscal Year 2025 Quarter 3</p>
-                 <div style="min-height: 22px;"></div>
 
+<div style="display: flex;">
+
+             <div id="column1" style="display: flex-row; float: left; max-width: 60%;"> 
+                       <label class="usa-label" for="options"><strong>Reporting Period</strong></label>
+         <p style="font-size: 26px; font-weight: 800; margin-top: 8px;">Fiscal Year 2025 Quarter 3</p>
+       </div>
+
+     <div id="column2" style="display: flex-row; float: right; max-width: 60%; margin-left: 62px;"> 
                        <label class="usa-label" for="options"><strong>Section</strong></label>
   <select class="usa-select" name="options" id="options">
     <option value="value1">Section 1 - Active Case Data</option>
   </select>
+     </div> 
 
-
-
+</div>
         
        
 
@@ -182,16 +188,24 @@
 
 
 
-            <div style="min-height: 22px;"></div>
 
-        <hr style="margin-bottom: 30px;">        <div style="min-height: 22px;"></div>
+        <hr style="margin-bottom: 8px;">       
 
-     <h2>Work Outcomes of TANF Exiters - FY 2025 - Quarter 1 </h2>
-     <p>The Work Outcomes of TANF Exiters report contains the Social Security Numbers (SSNs) of all work-eligible individuals who exit TANF in a given quarter and the dates in YYYYMM format that each individual exited TANF. </p>
-
-
-   
                   <a class="usa-button usa-button--outline" href="" type="button" style=" margin-bottom: 32px; text-decoration: none;">🞃 Show detail for all errors</a>                  <a class="usa-button usa-button--outline" href="" type="button" style=" margin-bottom: 32px; text-decoration: none;">🞁 Hide detail for all errors</a>
+
+                          <hr style="margin-bottom: 32px; margin-top: -8px;">       
+
+
+<ul class="usa-button-group usa-button-group--segmented" style="padding-left: 0px;">
+  <li class="usa-button-group__item">
+    <button type="button" class="usa-button">Errors by Case Number</button>
+  </li>
+  <li class="usa-button-group__item" style="margin-bottom: .25em;">
+    <button type="button" class="usa-button usa-button--outline">Errors by Error Type</button>
+  </li>
+
+</ul>
+   
 
 
 
@@ -203,16 +217,93 @@
       aria-expanded="true"
       aria-controls="m-a1"
     >
-      First Amendment
+      012345689 | 3 Errors
     </button>
   </h4>
   <div id="m-a1" class="usa-accordion__content usa-prose">
-    <p>
-      Congress shall make no law respecting an establishment of religion, or
-      prohibiting the free exercise thereof; or abridging the freedom of speech,
-      or of the press; or the right of the people peaceably to assemble, and to
-      petition the Government for a redress of grievances.
-    </p>
+    <p><span style="font-weight: 800;">Error Message: </span>T3 Item 60 (Family): value must be [1, 2, 4]</p>
+            <table class="usa-table">
+          <caption>Identifying the right Fiscal Year and Quarter</caption>
+  <thead>
+    <tr>
+      <th scope="col">Mark Read</th>
+      <th scope="col">Year</th>
+      <th scope="col">Month</th>
+      <th scope="col">Item Number</th>
+            <th scope="col">Item Name</th>
+      <th scope="col">Internal Variable Name</th>
+            <th scope="col">Row</th>
+                  <th scope="col">Error Type</th>
+
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"> <div class="usa-checkbox" style="background: none;">
+    <input
+      class="usa-checkbox__input"
+      id="check-historical-truth"
+      type="checkbox"
+      name="historical-figures"
+      value=""
+    />
+    <label class="usa-checkbox__label" for="check-historical-truth"
+      ></label>
+  </div></th>
+      <td>
+        FY Q2
+      </td>
+      <td>
+        FY Q1, October - December 
+      </td>
+      <td>
+        May 15
+      </td>
+
+    </tr>
+    <tr>
+      <th scope="row">FY Q2</th>
+      <td>
+        FY Q3
+      </td>
+      <td>
+        FY Q2, January - March
+      </td>
+      <td>
+        August 14
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">FY Q3</th>
+      <td>
+        FY Q4
+      </td>
+      <td>
+        FY Q3, April - June
+      </td>
+      <td>
+        November 14
+      </td>
+
+          <tr>
+      <th scope="row">FY Q4</th>
+      <td>
+        Following FY Q1
+      </td>
+      <td>
+        FY Q4, July - September
+      </td>
+      <td>
+        February 14
+      </td>
+
+    </tr>
+      
+  </tbody>
+</table>
+
   </div>
   <h4 class="usa-accordion__heading">
     <button

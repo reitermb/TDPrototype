@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="refresh" content="5;url=complete3.html#complete" />
     <title>TANF Data Portal</title>
-    <link rel="stylesheet" href="../css/uswds3.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uswds/3.13.0/css/uswds.min.css" />
     <link rel="icon" type="image/x-icon" href="../img/favicons/gov-favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -158,11 +158,11 @@
       <!-- Here ends desktop web menu -->
 
 
-      <main
-        class="usa-prose usa-layout-docs"
-        id="main-content">
-        <h1>Submit FRA Data</h1>
-        <div style="min-height: 22px;"></div>
+         <main>
+
+        <h1>TANF Data Files</h1>
+        <p class="usa-intro">Participation, Characteristics, and Caseload reports</p>
+      
 
         
        
@@ -174,7 +174,7 @@
 <div style="display: flex;">
      <div id="column1" style="max-width: 100%; display: flex; margin-right: 32px;">
 <form class="usa-form" style="min-width: 100%;">
-  <fieldset class="usa-fieldset">
+<!--   <fieldset class="usa-fieldset">
   <legend class="usa-legend usa-legend"><strong>Report Type</strong></legend>
   <div class="usa-radio">
     <input
@@ -186,7 +186,7 @@
       checked="checked"
     />
     <label class="usa-radio__label" for="historical-truth"
-      >Work Outcomes of TANF Exiters</label
+      >TANF Data </label
     >
   </div>
   <div class="usa-radio">
@@ -212,22 +212,23 @@
     <label class="usa-radio__label" for="historical-washington"
       >Supplemental Work Outcomes</label
     >
-  </div>
+  </div> 
 
-</fieldset>
-<label class="usa-label" for="options"><strong>Fiscal Year</strong></label>
+</fieldset>-->
+  <label class="usa-label" for="options"><strong>Fiscal Year (October - September)*</strong></label>
   <select class="usa-select" name="options" id="options">
+    <option value>- Select Fiscal Year -</option>
     <option value="value1">2025</option>
   </select>
     <label class="usa-label" for="options" style="margin-top: 32px;"><strong>Fiscal Quarter</strong></label>
   <select class="usa-select" name="options" id="options">
- 
+    <option value>- Select Fiscal Quarter -</option>
     <option value="value1">Quarter 1 (October - December)</option>
         <option value="value1">Quarter 2 (January - March)</option>
     <option value="value1">Quarter 3 (April - June)</option>
         <option value="value1">Quarter 4 (July - September)</option>
   </select>
-  <a class="usa-button" href="searched.html" type="button" style="margin-top: 86px; color: white; text-decoration: none;">Search</a>
+  <a class="usa-button" href="searched3.html#results" type="button">Search</a>
 
 
 </form>
@@ -235,14 +236,13 @@
 
 
      </div>
-     <div id="column2" style="display: flex-row; float: right; max-width: 70%; padding-top: 120px;">    
+     <div id="column2" style="display: flex-row; float: right; max-width: 60%; margin-left: 62px;">    
       <table class="usa-table">
-          <caption>Identifying the right Fiscal Year and Quarter</caption>
+          <caption>TANF/SSP Data Reporting Guidelines</caption>
   <thead>
     <tr>
-      <th scope="col">Individual Exits In</th>
-      <th scope="col">Exit Date Confirmed In </th>
-      <th scope="col">Individual appears in Quarterly Reporting Period</th>
+      <th scope="col">Fiscal Year (FY) & Quarter (Q)</th>
+      <th scope="col">Calendar Period</th>
       <th scope="col">Due Date</th>
     </tr>
   </thead>
@@ -250,57 +250,51 @@
     <tr>
       <th scope="row">FY Q1</th>
       <td>
-        FY Q2
+        Oct 1 - Dec 31
       </td>
       <td>
-        FY Q1, October - December 
+        February 14 
       </td>
-      <td>
-        May 15
-      </td>
+
 
     </tr>
     <tr>
       <th scope="row">FY Q2</th>
       <td>
-        FY Q3
+        Jan 1 - Mar 31
       </td>
       <td>
-        FY Q2, January - March
+        May 15
       </td>
-      <td>
-        August 14
-      </td>
+   
     </tr>
     <tr>
       <th scope="row">FY Q3</th>
       <td>
-        FY Q4
+        Apr 1 - Jun 30
       </td>
       <td>
-        FY Q3, April - June
+        August 14
+      </td>
+
+
+          <tr>
+      <th scope="row">FY Q4</th>
+      <td>
+        Jul 1 - Sep 30
       </td>
       <td>
         November 14
       </td>
 
-          <tr>
-      <th scope="row">FY Q4</th>
-      <td>
-        Following FY Q1
-      </td>
-      <td>
-        FY Q4, July - September
-      </td>
-      <td>
-        February 14
-      </td>
 
     </tr>
       
   </tbody>
 </table></div>
 </div>
+    
+        <!-- <hr style="margin-bottom: 30px;"> -->
     
         <hr style="margin-bottom: 30px;">
      <h2>Work Outcomes of TANF Exiters - FY 2025 - Quarter 1 </h2>
