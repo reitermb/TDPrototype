@@ -47,7 +47,7 @@
           </button>
         </div>
       </header>
-      <div
+<!--       <div
         class="usa-banner__content usa-accordion__content"
         id="gov-banner-default-default"
       >
@@ -106,7 +106,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
   <!-- Here ends banner -->
@@ -167,6 +167,7 @@
                   <a class="usa-button usa-button--outline" href="complete3.html" type="button" style=" margin-bottom: 32px; text-decoration: none;">🞀 Back to TANF Data Files</a>
 
         <h1>Error Report</h1>
+        <div style="min-width: 1000px;"></div>
 
 <div style="display: flex;">
 
@@ -218,7 +219,7 @@
     <button
       type="button"
       class="usa-accordion__button"
-      aria-expanded="true"
+
       aria-controls="m-a1"
     >
       012345689 | 3 Errors
@@ -352,6 +353,7 @@
       el.setAttribute("aria-expanded", "true");
   document.querySelectorAll("[hidden]").forEach(function(el) {
         el.removeAttribute("hidden");
+        el.setAttribute("lookup","");
       });
 
     });
@@ -362,36 +364,15 @@
        console.log("HUHDE");
     document.querySelectorAll("[aria-expanded]").forEach(function(el) {
       el.setAttribute("aria-expanded", "false");
-            document.querySelectorAll("[hidden]").forEach(function(el) {
-        el.setAttribute("hidden", "");
+            document.querySelectorAll("[lookup]").forEach(function(el) {
+        el.setAttribute("hidden", "true");
       });
 
     });
   });
 </script>
 
-<button id="toggleAll">Toggle All</button>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("toggleAll").addEventListener("click", function() {
-      document.querySelectorAll("[aria-expanded]").forEach(function(el) {
-        const current = el.getAttribute("aria-expanded") === "true";
-        el.setAttribute("aria-expanded", String(!current));
-      });
-
-      document.querySelectorAll("[hidden], [aria-expanded]").forEach(function(el) {
-        if (el.hasAttribute("hidden")) {
-          el.removeAttribute("hidden");
-        } else {
-          el.setAttribute("hidden", "");
-        }
-      });
-
-      console.log("Toggled all elements!");
-    });
-  });
-</script>
 
 
   <div class="grid-container usa-footer__return-to-top">
