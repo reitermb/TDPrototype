@@ -6,9 +6,53 @@
     <title>TANF Data Portal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uswds/3.13.0/css/uswds.min.css" />
     <link rel="icon" type="image/x-icon" href="../img/favicons/gov-favicon.ico" />
+      <style>
+    .skeleton {
+      width: 100%;
+    
+    }
+
+    .skeleton-line {
+      height: 16px;
+      margin: 10px 0;
+      border-radius: 4px;
+      background: linear-gradient(
+        90deg,
+        #e0e0e0 25%,
+        #f0f0f0 50%,
+        #e0e0e0 75%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 8.5s infinite;
+    }
+
+    .skeleton-line.short {
+      width: 40%;
+    }
+
+    .skeleton-line.medium {
+      width: 70%;
+    }
+
+    .skeleton-line.long {
+      width: 100%;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+  </style>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="../js/uswds.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uswds/3.13.0/js/uswds.min.js" defer></script>
+
+    <!-- <script src="../js/uswds.min.js"></script> -->
 
   </head>
 
@@ -43,7 +87,7 @@
           </button>
         </div>
       </header>
-      <div
+  <!--     <div
         class="usa-banner__content usa-accordion__content"
         id="gov-banner-default-default"
       >
@@ -102,7 +146,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
   <!-- Here ends banner -->
@@ -157,7 +201,7 @@
       <!-- Here ends desktop web menu -->
 
 
-      <main>
+       <main>
 
         <h1>TANF Data Files</h1>
         <p class="usa-intro">Participation, Characteristics, and Caseload reports</p>
@@ -294,49 +338,134 @@
 </div>
     
         <!-- <hr style="margin-bottom: 30px;"> -->
-    
         <hr style="margin-bottom: 30px;">
-     <h2 id="results">TANF — Fiscal Year 2025 — Quarter 1 (October - December)</h2>
-     <p></p>
-  <!-- <a class="usa-button usa-button--outline" href="Work-Outcomes-Template.xlsx" type="button" style="margin-top: 16px; margin-bottom: 32px; text-decoration: none;">Download Report Template</a> -->
+     <h2>TANF — Fiscal Year 2025 — Quarter 1 (October - December)</h2>
+     
+<ul class="usa-button-group usa-button-group--segmented" style="padding-left: 0px;">
+  <li class="usa-button-group__item">
+    <button type="button" class="usa-button usa-button--outline">Current Submission</button>
+  </li>
+  <li class="usa-button-group__item" style="margin-bottom: .25em;">
+    <button type="button" class="usa-button">Submission History</button>
+  </li>
 
-     <div class="usa-form-group">
-  <label class="usa-label" for="file-input-single"
-    ><strong>Section 1 - Active Case Data</strong></label
-  >
-  <input
-    id="file-input-single"
-    class="usa-file-input"
-    type="file"
-    name="file-input-single"
-  />
+</ul>
+
+<div style="margin-top: 24px;" class="usa-accordion">
+<h4 class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="m-a1"
+      style="max-width: 480px;"
+    >
+      Feedback Reports | 0
+    </button>
+  </h4>
+  <div id="m-a1" style="padding: 0px;" class="usa-accordion__content usa-prose">
+ <div class="usa-card__container" style="margin-left: 0px; border-radius: 0px; margin-right: 0px; height: fit-content; padding: none; max-width: 50%; max-height: 180px; display: flex;">
+
+       
+         <div class="skeleton" style="padding: 16px;">
+           <p style="margin-top: 0px;">
+          Feedback reports not yet available. You will receive an email notification when OFA uploads them (usually ~1 month from submission of all sections). 
+        </p>
+        <img src="../img/file.svg" style="height: 34px; position: absolute; top: 110px; fill: #h3h3h3;">
+    <div style="margin-left: 48px;" class="skeleton-line medium"></div>
+    <div style="margin-left: 48px;" class="skeleton-line short"></div>
+  </div>
+     
+    </div>
+  </div>
 </div>
 
-     <div class="usa-form-group">
-  <label class="usa-label" for="file-input-single"
-    ><strong>Section 2 - Closed Case Data</strong></label
-  >
-  <input
-    id="file-input-single"
-    class="usa-file-input"
-    type="file"
-    name="file-input-single"
-  />
-</div>
+ 
 
-     <div class="usa-form-group">
-  <label class="usa-label" for="file-input-single"
-    ><strong>Section 3 - Aggregate Data</strong></label
-  >
-  <input
-    id="file-input-single"
-    class="usa-file-input"
-    type="file"
-    name="file-input-single"
-  />
-</div>
 
-  <a class="usa-button" href="submitted3.html#submission" type="button" style="margin-top: 16px; color: white; text-decoration: none;">Submit Data Files</a>
+
+
+
+
+
+        <table class="usa-table" id="complete">
+          <caption>Section 1 - Active Case Data</caption>
+  <thead>
+    <tr>
+      <th>Submitted On</th>
+      <th>File Name</th>
+      <th>Month</th>
+      <th>Cases Without Errors</th>
+      <th>Cases With Errors</th>
+            <th>Records Unable to Process</th>
+
+      <th>Status</th>
+      <th>Error Report</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">11/14/2021 at 12:00 AM<br>by John Doe</td>
+      <td rowspan="3"><a href="#">ADS.ET2JFP1.TS58</a></td>
+      <td>January</td>
+      <td>N/A</td>
+      <td>N/A</td>
+       <td rowspan="3">N/A</td>
+      <td rowspan="3" style="color: red;">&#x274C; Rejected</td>
+      <td rowspan="3"><a href="#">View Error Report for ADS.ET2JFP1.TS58</a></td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>March</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>
+
+  <table class="usa-table" id="complete">
+          <caption>Section 2 - Active Case Data</caption>
+  <thead>
+    <tr>
+      <th>Submitted On</th>
+      <th>File Name</th>
+      <th>Month</th>
+      <th>Cases Without Errors</th>
+      <th>Cases With Errors</th>
+            <th>Records Unable to Process</th>
+
+      <th>Status</th>
+      <th>Error Report</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">11/14/2021 at 12:00 AM<br>by John Doe</td>
+      <td rowspan="3"><a href="#">ADS.ET2JFP1.TS58</a></td>
+      <td>January</td>
+      <td>N/A</td>
+      <td>N/A</td>
+       <td rowspan="3">N/A</td>
+      <td rowspan="3" style="color: red;">&#x274C; Rejected</td>
+      <td rowspan="3"><a href="#">View Error Report for ADS.ET2JFP1.TS58</a></td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>March</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>
+
 
 
       </main>

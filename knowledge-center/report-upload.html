@@ -148,6 +148,7 @@
   <div class="grid-container" style="min-height: 74vh;">
     <div class="grid-row grid-gap">
       <div class="usa-layout-docs__sidenav">
+
         <nav aria-label="Secondary navigation">
           
 
@@ -159,20 +160,14 @@
 
       <main>
 
-        <h1>TANF Data Files</h1>
-        <p class="usa-intro">Participation, Characteristics, and Caseload reports</p>
-      
-
-        
-       
-
-
-
-
+        <h1>Upload Feedback Reports</h1>
+        <p class="usa-intro">TANF WPR, SSP WPR, TANF & SSP Combined, and Time Limit Reports</p>
+        <p>Once submitted, TDP will distribute feedback reports to TANF/SSP submission history pages of each state and notify users that feedback reports are available. There may be several minutes between when the ZIP is uploaded and when all notifications have been sent as TDP processes the reports.</p>
+                
 
 <div style="display: flex;">
      <div id="column1" style="max-width: 100%; display: flex; margin-right: 32px;">
-<form class="usa-form" style="min-width: 100%;">
+<!-- <form class="usa-form" style="min-width: 100%;"> -->
 <!--   <fieldset class="usa-fieldset">
   <legend class="usa-legend usa-legend"><strong>Report Type</strong></legend>
   <div class="usa-radio">
@@ -214,7 +209,7 @@
   </div> 
 
 </fieldset>-->
-  <label class="usa-label" for="options"><strong>Fiscal Year (October - September)*</strong></label>
+ <!--  <label class="usa-label" for="options"><strong>Fiscal Year (October - September)*</strong></label>
   <select class="usa-select" name="options" id="options">
     <option value>- Select Fiscal Year -</option>
     <option value="value1">2025</option>
@@ -230,79 +225,57 @@
   <a class="usa-button" href="searched3.html#results" type="button">Search</a>
 
 
-</form>
+</form> -->
 
 
 
      </div>
-     <div id="column2" style="display: flex-row; float: right; max-width: 60%; margin-left: 62px;">    
+
+          <!-- <h2>Aggregated Data</h2> -->
+
+<!--      <div id="column2" style="display: flex-row; float: right; max-width: 60%; margin-left: 62px;">    
       <table class="usa-table">
           <caption>TANF/SSP Data Reporting Guidelines</caption>
-  <thead>
+   <thead>
     <tr>
-      <th scope="col">Fiscal Year (FY) & Quarter (Q)</th>
-      <th scope="col">Calendar Period</th>
-      <th scope="col">Due Date</th>
+      <th rowspan="2">Jurisdiction</th>
+      <th colspan="3">FY2025 1st Quarter</th>
+    </tr>
+    <tr>
+      <th>Oct</th>
+      <th>Nov</th>
+      <th>Dec</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">FY Q1</th>
-      <td>
-        Oct 1 - Dec 31
-      </td>
-      <td>
-        February 14 
-      </td>
-
-
-    </tr>
-    <tr>
-      <th scope="row">FY Q2</th>
-      <td>
-        Jan 1 - Mar 31
-      </td>
-      <td>
-        May 15
-      </td>
-   
-    </tr>
-    <tr>
-      <th scope="row">FY Q3</th>
-      <td>
-        Apr 1 - Jun 30
-      </td>
-      <td>
-        August 14
-      </td>
-
-
-          <tr>
-      <th scope="row">FY Q4</th>
-      <td>
-        Jul 1 - Sep 30
-      </td>
-      <td>
-        November 14
-      </td>
-
-
-    </tr>
-      
+    <tr><td>United States</td><td>42.3</td><td>42.4</td><td>42.2</td></tr>
+    <tr><td>Alabama</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+    <tr><td>Alaska</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+    <tr><td>Arizona</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+    <tr><td>Arkansas</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+    <tr><td>California</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+    <tr><td>Colorado</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+    <tr><td>Connecticut</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+    <tr><td>Delaware</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+    <tr><td>District of Columbia</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+    <tr><td>Florida</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+    <tr><td>Georgia</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+    <tr><td>Guam</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+    <tr><td>Hawaii</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
   </tbody>
-</table></div>
+</table>
+</div> -->
 </div>
     
         <!-- <hr style="margin-bottom: 30px;"> -->
     
         <hr style="margin-bottom: 30px;">
-     <h2 id="results">TANF — Fiscal Year 2025 — Quarter 1 (October - December)</h2>
      <p></p>
   <!-- <a class="usa-button usa-button--outline" href="Work-Outcomes-Template.xlsx" type="button" style="margin-top: 16px; margin-bottom: 32px; text-decoration: none;">Download Report Template</a> -->
 
      <div class="usa-form-group">
   <label class="usa-label" for="file-input-single"
-    ><strong>Section 1 - Active Case Data</strong></label
+    ><strong>Feedback Reports ZIP</strong></label
   >
   <input
     id="file-input-single"
@@ -312,33 +285,50 @@
   />
 </div>
 
-     <div class="usa-form-group">
-  <label class="usa-label" for="file-input-single"
-    ><strong>Section 2 - Closed Case Data</strong></label
-  >
-  <input
-    id="file-input-single"
-    class="usa-file-input"
-    type="file"
-    name="file-input-single"
-  />
-</div>
 
-     <div class="usa-form-group">
-  <label class="usa-label" for="file-input-single"
-    ><strong>Section 3 - Aggregate Data</strong></label
-  >
-  <input
-    id="file-input-single"
-    class="usa-file-input"
-    type="file"
-    name="file-input-single"
-  />
-</div>
-
-  <a class="usa-button" href="submitted3.html#submission" type="button" style="margin-top: 16px; color: white; text-decoration: none;">Submit Data Files</a>
+  <a class="usa-button" href="submitted3.html#submission" type="button" style="margin-top: 16px; color: white; text-decoration: none;">Submit & Notify States</a>
 
 
+
+ <table class="usa-table">
+          <caption>Submission History</caption>
+  <thead>
+    <tr>
+      <th scope="col">Fiscal Year</th>
+      <th scope="col">Uploaded On</th>
+       <th scope="col">Notifications Sent On</th>
+            <th scope="col">File</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">2025</th>
+      <td>
+        03/05/2025 10:31 AM
+      </td>
+       <td>
+        03/05/2025 10:41 AM
+      </td>
+      <td>
+        <a href="">FY2025.zip</a>
+      </td>
+
+ <tr>
+      <th scope="row">2025</th>
+     <td>
+        01/08/2025 9:41 AM
+      </td>
+           <td>
+        01/08/2025 9:48 AM
+      </td>
+
+      <td>
+        <a href="">FY2025.zip</a>
+      </td>
+      
+  </tbody>
+</table>
       </main>
 
 
