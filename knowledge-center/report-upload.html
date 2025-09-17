@@ -298,6 +298,7 @@
       <th scope="col">Feedback uploaded on</th>
        <th scope="col">Notifications sent on</th>
             <th scope="col">File</th>
+            <th scope="col">Downloaded by</th>
 
     </tr>
   </thead>
@@ -313,6 +314,9 @@
       <td>
         <a href="">FY2025.zip</a>
       </td>
+        <td>
+        <a href="">30 jurisdictions</a>
+      </td>
 
  <tr>
       <th scope="row">2025</th>
@@ -327,10 +331,97 @@
       <td>
         <a href="">FY2025.zip</a>
       </td>
+              <td>
+ 
+  <a
+    href="#example-modal-1"
+    class=""
+    aria-controls="example-modal-1"
+    data-open-modal
+    >51 jurisdictions</a
+  >
+  
+
+      </td>
+
+
       
   </tbody>
 </table>
+<div
+    class="usa-modal"
+    id="example-modal-1"
+    aria-labelledby="modal-1-heading"
+    aria-describedby="modal-1-description"
+    role="dialog"
+    aria-modal="true"
+    hidden
+    style="display: none;"
+  >
+    <div class="usa-modal__content">
+      <div class="usa-modal__main">
+        <h2 class="usa-modal__heading" id="modal-1-heading">
+          Download Statistics
+        </h2>
+        <div class="usa-prose">
+          <table class="usa-table" id="modal-1-description">
+              <thead>
+    <tr>
+      <th scope="col">Downloaded</th>
+      <th scope="col">Not yet downloaded</th>
 
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td>
+        Indiana
+      </td>
+       <td>
+        North Dakota
+      </td>
+    </tr>
+      <tr>
+      <td>
+        ...
+      </td>
+        <td>
+        ...
+      </td>
+
+</tr>
+
+
+      
+  </tbody>
+</table>
+         
+        </div>
+        <div class="usa-modal__footer">
+          <ul class="usa-button-group">
+            <li class="usa-button-group__item">
+              <button type="button" class="usa-button" data-close-modal>
+                Close
+              </button>
+            </li>
+          
+          </ul>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="usa-button usa-modal__close"
+        aria-label="Close this window"
+        data-close-modal
+      >
+        <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+          <use href="/assets/img/sprite.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
 
       </main>
 
@@ -379,5 +470,69 @@
       </div>
     </div>
   </div>
+  <script>
+    // Lightweight fallback in case USWDS modal JS doesn't wire up automatically
+    (function () {
+      function getTargetModalId(el) {
+        var fromAria = el.getAttribute('aria-controls');
+        if (fromAria) return fromAria;
+        var href = el.getAttribute('href') || '';
+        if (href.startsWith('#')) return href.slice(1);
+        try { var u = new URL(href, window.location.href); return (u.hash || '').slice(1); } catch (_) { return null; }
+      }
+
+      function openModal(modal) {
+        if (!modal) return;
+        modal.removeAttribute('hidden');
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        var focusable = modal.querySelector('[autofocus], .usa-modal__close, button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusable && typeof focusable.focus === 'function') focusable.focus();
+      }
+
+      function closeModal(modal) {
+        if (!modal) return;
+        modal.setAttribute('hidden', '');
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      document.addEventListener('click', function (e) {
+        var opener = e.target.closest('[data-open-modal]');
+        if (opener) {
+          e.preventDefault();
+          var id = getTargetModalId(opener);
+          var modal = id ? document.getElementById(id) : null;
+          openModal(modal);
+          return;
+        }
+
+        var closer = e.target.closest('[data-close-modal]');
+        if (closer) {
+          e.preventDefault();
+          var modalToClose = closer.closest('.usa-modal');
+          closeModal(modalToClose);
+        }
+
+        // Click outside modal content closes it
+        var openModalEl = document.querySelector('.usa-modal:not([hidden])');
+        if (openModalEl && e.target === openModalEl) {
+          closeModal(openModalEl);
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' || e.key === 'Esc') {
+          var visibleModal = document.querySelector('.usa-modal:not([hidden])');
+          if (visibleModal) {
+            e.preventDefault();
+            closeModal(visibleModal);
+          }
+        }
+      });
+    })();
+  </script>
 </footer>
 </div>
