@@ -178,9 +178,9 @@
 
      <div id="column2" style="display: flex-row; float: right; max-width: 60%; margin-left: 62px;"> 
                        <label class="usa-label" for="options"><strong>Section</strong></label>
-  <select class="usa-select" name="options" id="options">
-    <option value="value1">Section 1 - Active Case Data</option>
-        <option value="value2">Section 3 - Aggregate Data</option>
+  <select class="usa-select" name="options" id="section-options"> 
+    <option value="section1">Section 1 - Active Case Data</option>
+        <option value="section3">Section 3 - Aggregate Data</option>
 
   </select>
      </div> 
@@ -203,16 +203,16 @@
 
 <ul class="usa-button-group usa-button-group--segmented" style="padding-left: 0px;">
   <li class="usa-button-group__item">
-    <button type="button" class="usa-button">Errors by Case Number</button>
+    <button type="button" class="usa-button" id="case-number">Errors by Case Number</button>
   </li>
   <li class="usa-button-group__item" style="margin-bottom: .25em;">
-    <button type="button" class="usa-button usa-button--outline">Errors by Error Type</button>
+    <button type="button" class="usa-button usa-button--outline" id="error-type">Errors by Error Type</button>
   </li>
 
 </ul>
    
 
-
+<div id="case-num-results">
 
        <div class="usa-accordion usa-accordion--multiselectable" data-allow-multiple>
   <h4 class="usa-accordion__heading">
@@ -222,11 +222,11 @@
 
       aria-controls="m-a1"
     >
-      012345689 | 2 Errors
+      012345689 | 1 Error
     </button>
   </h4>
   <div id="m-a1" class="usa-accordion__content usa-prose">
-    <p><span style="font-weight: 800;">Error Message: </span>T3 Item 60 (Family): value must be [1, 2, 4]</p>
+    <p><span style="font-weight: 800; font-size: 1.3rem;">Error Message: </span><br>T3 Item 60 (Family): value must be [1, 2, 4]</p>
             <table class="usa-table">
   <thead>
     <tr>
@@ -271,7 +271,7 @@
 
 
     </tr>
-    <tr>
+<!--     <tr>
       <th scope="row"> <div class="usa-checkbox" style="background: none;">
     <input
       class="usa-checkbox__input"
@@ -294,11 +294,14 @@
             <td>FAMILY_AFFILIATION</td>
         <td>509</td>
         <td>Record value invalid</td>
-    </tr>
+    </tr> -->
     
       
   </tbody>
 </table>
+
+    <p style="max-width: none;"><span style="font-weight: 800; font-size: 1.3rem;">Error Summary: </span><br>Since the individual is a parent of a minor child in the TANF family receiving assistance (Item 30 = 2), then reporting Education Level (Item 41) is required, and code 99 is not an option. Education Level must be between 0 and 16, or must be reported as code 98 (no formal education).</p>
+
 
   </div>
   <h4 class="usa-accordion__heading">
@@ -424,6 +427,14 @@
 </table>
 
 </div>
+</div>
+
+<div id="error-type-results" style="display: none;">
+  <h4>Errors by Error Type</h4>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+</div>
 
 
       </main>
@@ -465,8 +476,69 @@
   });
 </script>
 
+<script>
+  document.getElementById("section-options").addEventListener("change", function() {
+    if (this.value === "section3") {
+      window.location.href = "error3-section3.html";
+    }
+  });
+</script>
 
+<script>
+    // Ensure default view shows case results and hides error-type results on load
+    document.addEventListener("DOMContentLoaded", function () {
+      var errorTypeResults = document.getElementById("error-type-results");
+      if (errorTypeResults) {
+        errorTypeResults.style.display = "none";
+      }
+    });
+  </script>
 
+  <script>
+    // Handle clicking "Errors by Error Type": show error-type results, hide case results, and toggle button styles
+    document.getElementById("error-type").addEventListener("click", function () {
+      var caseResults = document.getElementById("case-num-results");
+      var errorTypeResults = document.getElementById("error-type-results");
+      if (caseResults) {
+        caseResults.style.display = "none";
+      }
+      if (errorTypeResults) {
+        errorTypeResults.style.display = ""; // show
+      }
+
+      var errorTypeBtn = document.getElementById("error-type");
+      var caseNumberBtn = document.getElementById("case-number");
+      if (errorTypeBtn) {
+        errorTypeBtn.classList.remove("usa-button--outline");
+      }
+      if (caseNumberBtn) {
+        caseNumberBtn.classList.add("usa-button--outline");
+      }
+    });
+  </script>
+
+  <script>
+    // Handle clicking "Errors by Case Number": show case results, hide error-type results, and toggle button styles back
+    document.getElementById("case-number").addEventListener("click", function () {
+      var caseResults = document.getElementById("case-num-results");
+      var errorTypeResults = document.getElementById("error-type-results");
+      if (caseResults) {
+        caseResults.style.display = ""; // show
+      }
+      if (errorTypeResults) {
+        errorTypeResults.style.display = "none"; // hide
+      }
+
+      var errorTypeBtn = document.getElementById("error-type");
+      var caseNumberBtn = document.getElementById("case-number");
+      if (errorTypeBtn) {
+        errorTypeBtn.classList.add("usa-button--outline");
+      }
+      if (caseNumberBtn) {
+        caseNumberBtn.classList.remove("usa-button--outline");
+      }
+    });
+  </script>
 
   <div class="grid-container usa-footer__return-to-top">
     <a href="#">Return to top</a>

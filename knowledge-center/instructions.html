@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACF-199 / ACF-209 Data Reporting Instructions</title>
+</head>
+<body style="max-width:68em; margin-left: 24em; line-height: 1.2em;">
+
+
+<h1>ACF-199 TANF and ACF-209 SSP-MOE Data Reporting Instructions</h1>
+
+<!-- Table of Contents -->
+<nav>
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#general-instructions">General Instructions</a></li>
+    <li><a href="#tanf-section-1">TANF Data Report – Section One</a></li>
+    <li><a href="#tanf-section-2">TANF Data Report – Section Two</a></li>
+    <li><a href="#tanf-section-3">TANF Data Report – Section Three</a></li>
+    <li><a href="#tanf-section-4">TANF Data Report – Section Four</a></li>
+    <li><a href="#ssp-section-1">SSP-MOE Data Report – Section One</a></li>
+    <li><a href="#ssp-section-2">SSP-MOE Data Report – Section Two</a></li>
+    <li><a href="#ssp-section-3">SSP-MOE Data Report – Section Three</a></li>
+    <li><a href="#ssp-section-4">SSP-MOE Data Report – Section Four</a></li>
+    <li><a href="#appendix">Appendix</a></li>
+  </ul>
+</nav>
+
+<hr>
+
+<!-- General Instructions -->
+<h2 id="general-instructions">General Instructions</h2>
+<p>The TANF Data Report (ACF‑199) and the SSP‑MOE Data Report (ACF‑209) are required quarterly submissions under section 411 of the Social Security Act and 45 CFR Part 265. These reports collect disaggregated case‑level data on families receiving assistance under the Temporary Assistance for Needy Families (TANF) program or Separate State Programs (SSP) that count toward the State’s Maintenance of Effort (MOE) requirement.</p>
+<p>States and territories must submit these reports electronically to the Administration for Children and Families (ACF) within 45 days after the end of each quarter. The data are used to calculate work participation rates, assess program performance, and meet statutory reporting requirements.</p>
+<p>All data elements must be completed according to the definitions and coding instructions provided in this document. If a data element is not applicable, follow the coding rules for “not applicable” or “missing” as specified. Do not leave fields blank unless explicitly instructed.</p>
+<p>Each record in the file must include a header segment with identifying information, followed by one or more data segments containing the case‑level details. The file layout, record lengths, and field positions must conform exactly to the specifications in these instructions.</p>
+<ol>
+  <li id="1">State FIPS Code – Enter the two‑digit Federal Information Processing Standards (FIPS) code assigned to your state or territory.</li>
+  <li id="2">County FIPS Code – Enter the three‑digit FIPS code for the county in which the family resides. For families living in independent cities, use the appropriate city FIPS code.</li>
+  <li id="3">Tribal Code – If the case is administered by a tribal TANF program, enter the three‑digit tribal code. Otherwise, enter “000”.</li>
+  <li id="4">Report Month – Enter the month and year (MMCCYY) for the reporting period. The month should be the last month of the quarter being reported.</li>
+  <li id="5">Funding Stream – Indicate whether the case is funded under TANF or SSP‑MOE by entering the appropriate code.</li>
+</ol>
+
+<!-- TANF Section One -->
+<h2 id="tanf-section-1">TANF Data Report – Section One</h2>
+
+<p>Section One collects disaggregated case-level data for families receiving assistance under the TANF program during the report month. Each record should reflect the family’s status as of the last day of the report month, unless otherwise specified. Enter data exactly as defined in these instructions to ensure consistency and accuracy across states.</p>
+
+<ol start="6">
+  <li id="6">Case Number – Enter the unique 11-character case number assigned by the state or local agency. This number must remain constant for the life of the case and should not be reused for another family.</li>
+  <li id="7">ZIP Code – Enter the five-digit ZIP code for the family’s residence. If the family is homeless, enter the ZIP code of the agency office serving the case.</li>
+  <li id="8">Family Type – Indicate the family type using the appropriate code:
+    <ul>
+      <li>1 – Single-parent family (one work-eligible adult and one or more children)</li>
+      <li>2 – Two-parent family (two work-eligible adults and one or more children)</li>
+      <li>3 – Child-only case (no work-eligible adults in the assistance unit)</li>
+    </ul>
+  </li>
+  <li id="9">New Applicant – Enter “Y” if the family applied for TANF during the report month and was determined eligible; otherwise, enter “N”.</li>
+  <li id="10">Date of Application – If item 9 is “Y”, enter the date the family applied for TANF in MMDDYYYY format; otherwise, leave blank.</li>
+  <li id="11">Date Assistance Began – Enter the date the family began receiving TANF assistance in MMDDYYYY format. For reopened cases, enter the most recent start date.</li>
+  <li id="12">Number of Family Members – Enter the total number of persons in the TANF assistance unit, including adults and children.</li>
+  <li id="13">Number of Adults – Enter the number of adults (age 18 or older, or under 18 and head of household) in the assistance unit.</li>
+  <li id="14">Number of Children – Enter the number of children (under age 18, unless a minor head of household) in the assistance unit.</li>
+  <li id="15">Receipt of Assistance – Indicate whether the family received TANF assistance for the entire report month (“1”), part of the month (“2”), or not at all (“3”).</li>
+</ol>
+
+<!-- TANF Section Two -->
+<h2 id="tanf-section-2">TANF Data Report – Section Two</h2>
+
+<p>Section Two collects information on each adult recipient in the TANF assistance unit. An adult recipient is defined as a work‑eligible individual age 18 or older, or a minor head of household, who is receiving TANF assistance in the report month. Report one record for each adult recipient in the case.</p>
+
+<ol start="16">
+  <li id="16">Recipient Number – Assign a sequential number to each adult recipient in the case (e.g., 01, 02).</li>
+  <li id="17">Date of Birth – Enter the recipient’s date of birth in MMDDYYYY format.</li>
+  <li id="18">Gender – Enter “M” for male or “F” for female.</li>
+  <li id="19">Education Level – Enter the highest grade of school completed, using the codes provided in the appendix.</li>
+  <li id="20">Marital Status – Indicate the recipient’s marital status as of the last day of the report month, using the appropriate code.</li>
+  <li id="21">Relationship to Head of Household – Enter the code that describes the recipient’s relationship to the head of household.</li>
+  <li id="22">Work Participation Status – Indicate whether the recipient is a work‑eligible individual, exempt, or sanctioned, using the codes provided.</li>
+  <li id="23">Work Participation Hours – Enter the total number of hours the recipient participated in countable work activities during the report month.</li>
+  <li id="24">Work Activities – For each countable work activity in which the recipient participated, enter the activity code and the number of hours per week.</li>
+  <li id="25">Earned Income – Enter the amount of earned income received by the recipient in the report month, rounded to the nearest dollar.</li>
+  <li id="26">Unearned Income – Enter the amount of unearned income received by the recipient in the report month, rounded to the nearest dollar.</li>
+  <li id="27">Receipt of Subsidized Child Care – Enter “Y” if the recipient received subsidized child care during the report month; otherwise, enter “N”.</li>
+  <li id="28">Receipt of Transitional Services – Enter “Y” if the recipient received transitional services during the report month; otherwise, enter “N”.</li>
+</ol>
+
+<!-- TANF Section Three -->
+<h2 id="tanf-section-3">TANF Data Report – Section Three</h2>
+
+<p>Section Three collects information on each child recipient in the TANF assistance unit. A child recipient is defined as an individual under age 18 (or under 19 if a full‑time student in a secondary school or equivalent level of vocational/technical training) who is receiving TANF assistance in the report month. Report one record for each child recipient in the case.</p>
+
+<ol start="29">
+  <li id="29">Recipient Number – Assign a sequential number to each child recipient in the case (e.g., 01, 02).</li>
+  <li id="30">Date of Birth – Enter the child’s date of birth in MMDDYYYY format.</li>
+  <li id="31">Gender – Enter “M” for male or “F” for female.</li>
+  <li id="32">Relationship to Head of Household – Enter the code that describes the child’s relationship to the head of household.</li>
+  <li id="33">Education Level – Enter the highest grade of school completed, using the codes provided in the appendix. For children not yet in school, enter the code for “not in school.”</li>
+  <li id="34">School Attendance – Enter “Y” if the child is attending school full‑time; otherwise, enter “N”.</li>
+  <li id="35">Disability Status – Enter “Y” if the child has a disability as defined by the state’s TANF program; otherwise, enter “N”.</li>
+  <li id="36">Receipt of Child Care – Enter “Y” if the child received subsidized child care during the report month; otherwise, enter “N”.</li>
+</ol>
+
+<!-- TANF Section Four -->
+<h2 id="tanf-section-4">TANF Data Report – Section Four</h2>
+
+<p>Section Four collects information on closed TANF cases. Report one record for each case that closed during the report month. A case is considered closed when the family stops receiving TANF assistance for any reason, including ineligibility, voluntary withdrawal, or sanction.</p>
+
+<ol start="37">
+  <li id="37">Case Number – Enter the unique 11-character case number assigned by the state or local agency. This must match the case number used in prior reports for the same family.</li>
+  <li id="38">Closure Date – Enter the date the TANF case closed in MMDDYYYY format.</li>
+  <li id="39">Closure Reason – Enter the code that best describes the reason for case closure, using the list provided in the appendix.</li>
+  <li id="40">Reapplication Indicator – Enter “Y” if the family reapplied for TANF within the same report month; otherwise, enter “N”.</li>
+  <li id="41">Last Month of Assistance – Enter “Y” if this was the final month the family received TANF assistance; otherwise, enter “N”.</li>
+</ol>
+
+<hr>
+
+<!-- SSP-MOE Section One -->
+<h2 id="ssp-section-1">SSP‑MOE Data Report – Section One</h2>
+
+<p>Section One collects disaggregated case‑level data for families receiving assistance under Separate State Programs (SSP) that count toward the State’s Maintenance of Effort (MOE) requirement. Each record should reflect the family’s status as of the last day of the report month, unless otherwise specified. Enter data exactly as defined in these instructions to ensure consistency and accuracy across states.</p>
+
+<ol start="42">
+  <li id="42">Case Number – Enter the unique 11‑character case number assigned by the state or local agency. This number must remain constant for the life of the case and should not be reused for another family.</li>
+  <li id="43">ZIP Code – Enter the five‑digit ZIP code for the family’s residence. If the family is homeless, enter the ZIP code of the agency office serving the case.</li>
+  <li id="44">Family Type – Indicate the family type using the appropriate code:
+    <ul>
+      <li>1 – Single‑parent family (one work‑eligible adult and one or more children)</li>
+      <li>2 – Two‑parent family (two work‑eligible adults and one or more children)</li>
+      <li>3 – Child‑only case (no work‑eligible adults in the assistance unit)</li>
+    </ul>
+  </li>
+  <li id="45">New Applicant – Enter “Y” if the family applied for SSP‑MOE assistance during the report month and was determined eligible; otherwise, enter “N”.</li>
+  <li id="46">Date of Application – If item 45 is “Y”, enter the date the family applied for SSP‑MOE in MMDDYYYY format; otherwise, leave blank.</li>
+  <li id="47">Date Assistance Began – Enter the date the family began receiving SSP‑MOE assistance in MMDDYYYY format. For reopened cases, enter the most recent start date.</li>
+  <li id="48">Number of Family Members – Enter the total number of persons in the SSP‑MOE assistance unit, including adults and children.</li>
+  <li id="49">Number of Adults – Enter the number of adults (age 18 or older, or under 18 and head of household) in the assistance unit.</li>
+  <li id="50">Number of Children – Enter the number of children (under age 18, unless a minor head of household) in the assistance unit.</li>
+  <li id="51">Receipt of Assistance – Indicate whether the family received SSP‑MOE assistance for the entire report month (“1”), part of the month (“2”), or not at all (“3”).</li>
+</ol>
+
+<!-- SSP-MOE Section Two -->
+<h2 id="ssp-section-2">SSP‑MOE Data Report – Section Two</h2>
+
+<p>Section Two collects information on each adult recipient in the SSP‑MOE assistance unit. An adult recipient is defined as a work‑eligible individual age 18 or older, or a minor head of household, who is receiving SSP‑MOE assistance in the report month. Report one record for each adult recipient in the case.</p>
+
+<ol start="52">
+  <li id="52">Recipient Number – Assign a sequential number to each adult recipient in the case (e.g., 01, 02).</li>
+  <li id="53">Date of Birth – Enter the recipient’s date of birth in MMDDYYYY format.</li>
+  <li id="54">Gender – Enter “M” for male or “F” for female.</li>
+  <li id="55">Education Level – Enter the highest grade of school completed, using the codes provided in the appendix.</li>
+  <li id="56">Marital Status – Indicate the recipient’s marital status as of the last day of the report month, using the appropriate code.</li>
+  <li id="57">Relationship to Head of Household – Enter the code that describes the recipient’s relationship to the head of household.</li>
+  <li id="58">Work Participation Status – Indicate whether the recipient is a work‑eligible individual, exempt, or sanctioned, using the codes provided.</li>
+  <li id="59">Work Participation Hours – Enter the total number of hours the recipient participated in countable work activities during the report month.</li>
+  <li id="60">Work Activities – For each countable work activity in which the recipient participated, enter the activity code and the number of hours per week.</li>
+  <li id="61">Earned Income – Enter the amount of earned income received by the recipient in the report month, rounded to the nearest dollar.</li>
+  <li id="62">Unearned Income – Enter the amount of unearned income received by the recipient in the report month, rounded to the nearest dollar.</li>
+  <li id="63">Receipt of Subsidized Child Care – Enter “Y” if the recipient received subsidized child care during the report month; otherwise, enter “N”.</li>
+  <li id="64">Receipt of Transitional Services – Enter “Y” if the recipient received transitional services during the report month; otherwise, enter “N”.</li>
+</ol>
+
+<!-- SSP-MOE Section Three -->
+<h2 id="ssp-section-3">SSP‑MOE Data Report – Section Three</h2>
+
+<p>Section Three collects information on each child recipient in the SSP‑MOE assistance unit. A child recipient is defined as an individual under age 18 (or under 19 if a full‑time student in a secondary school or equivalent level of vocational/technical training) who is receiving SSP‑MOE assistance in the report month. Report one record for each child recipient in the case.</p>
+
+<ol start="65">
+  <li id="65">Recipient Number – Assign a sequential number to each child recipient in the case (e.g., 01, 02).</li>
+  <li id="66">Date of Birth – Enter the child’s date of birth in MMDDYYYY format.</li>
+  <li id="67">Gender – Enter “M” for male or “F” for female.</li>
+  <li id="68">Relationship to Head of Household – Enter the code that describes the child’s relationship to the head of household.</li>
+  <li id="69">Education Level – Enter the highest grade of school completed, using the codes provided in the appendix. For children not yet in school, enter the code for “not in school.”</li>
+  <li id="70">School Attendance – Enter “Y” if the child is attending school full‑time; otherwise, enter “N”.</li>
+  <li id="71">Disability Status – Enter “Y” if the child has a disability as defined by the state’s SSP‑MOE program; otherwise, enter “N”.</li>
+  <li id="72">Receipt of Child Care – Enter “Y” if the child received subsidized child care during the report month; otherwise, enter “N”.</li>
+</ol>
+
+<!-- SSP-MOE Section Four -->
+<h2 id="ssp-section-4">SSP‑MOE Data Report – Section Four</h2>
+
+<p>Section Four collects information on closed SSP‑MOE cases. Report one record for each case that closed during the report month. A case is considered closed when the family stops receiving SSP‑MOE assistance for any reason, including ineligibility, voluntary withdrawal, or sanction.</p>
+
+<ol start="73">
+  <li id="73">Case Number – Enter the unique 11‑character case number assigned by the state or local agency. This must match the case number used in prior reports for the same family.</li>
+  <li id="74">Closure Date – Enter the date the SSP‑MOE case closed in MMDDYYYY format.</li>
+  <li id="75">Closure Reason – Enter the code that best describes the reason for case closure, using the list provided in the appendix.</li>
+  <li id="76">Reapplication Indicator – Enter “Y” if the family reapplied for SSP‑MOE within the same report month; otherwise, enter “N”.</li>
+  <li id="77">Last Month of Assistance – Enter “Y” if this was the final month the family received SSP‑MOE assistance; otherwise, enter “N”.</li>
+</ol>
+
