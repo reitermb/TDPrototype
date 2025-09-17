@@ -173,7 +173,7 @@
 
              <div id="column1" style="display: flex-row; float: left; max-width: 60%;"> 
                        <label class="usa-label" for="options"><strong>Reporting Period</strong></label>
-         <p style="font-size: 26px; font-weight: 800; margin-top: 8px;">Fiscal Year 2025 Quarter 3</p>
+         <p style="font-size: 26px; font-weight: 800; margin-top: 8px;">Fiscal Year 2025 Quarter 1</p>
        </div>
 
      <div id="column2" style="display: flex-row; float: right; max-width: 60%; margin-left: 62px;"> 
@@ -222,21 +222,20 @@
 
       aria-controls="m-a1"
     >
-      012345689 | 3 Errors
+      012345689 | 2 Errors
     </button>
   </h4>
   <div id="m-a1" class="usa-accordion__content usa-prose">
     <p><span style="font-weight: 800;">Error Message: </span>T3 Item 60 (Family): value must be [1, 2, 4]</p>
             <table class="usa-table">
-          <caption>Identifying the right Fiscal Year and Quarter</caption>
   <thead>
     <tr>
-      <th scope="col">Mark Read</th>
+      <th scope="col">Mark As Corrected</th>
       <th scope="col">Year</th>
       <th scope="col">Month</th>
       <th scope="col">Item Number</th>
             <th scope="col">Item Name</th>
-      <th scope="col">Internal Variable Name</th>
+                        <th scope="col">Internal Variable Name</th>
             <th scope="col">Row</th>
                   <th scope="col">Error Type</th>
 
@@ -249,62 +248,54 @@
       <th scope="row"> <div class="usa-checkbox" style="background: none;">
     <input
       class="usa-checkbox__input"
-      id="check-historical-truth"
+      id="1"
       type="checkbox"
       name="historical-figures"
-      value=""
-    />
-    <label class="usa-checkbox__label" for="check-historical-truth"
+      value=""/>
+    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="1"
       ></label>
   </div></th>
       <td>
-        FY Q2
+        2024
       </td>
       <td>
-        FY Q1, October - December 
+        October
       </td>
       <td>
-        May 15
+        41
       </td>
+      <td>Education Level</td>
+            <td>EDUCATION_LEVEL</td>
+        <td>9</td>
+        <td>Record value consistency</td>
+
 
     </tr>
     <tr>
-      <th scope="row">FY Q2</th>
-      <td>
-        FY Q3
+      <th scope="row"> <div class="usa-checkbox" style="background: none;">
+    <input
+      class="usa-checkbox__input"
+      id="2"
+      type="checkbox"
+      name="historical-figures"
+      value=""/>
+    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="2"
+      ></label>
+  </div></th>           <td>
+        2024
       </td>
       <td>
-        FY Q2, January - March
+        December
       </td>
       <td>
-        August 14
+        60
       </td>
+      <td>Family Affiliation</td>
+            <td>FAMILY_AFFILIATION</td>
+        <td>509</td>
+        <td>Record value invalid</td>
     </tr>
-    <tr>
-      <th scope="row">FY Q3</th>
-      <td>
-        FY Q4
-      </td>
-      <td>
-        FY Q3, April - June
-      </td>
-      <td>
-        November 14
-      </td>
-
-          <tr>
-      <th scope="row">FY Q4</th>
-      <td>
-        Following FY Q1
-      </td>
-      <td>
-        FY Q4, July - September
-      </td>
-      <td>
-        February 14
-      </td>
-
-    </tr>
+    
       
   </tbody>
 </table>
@@ -328,7 +319,7 @@
           <caption>Identifying the right Fiscal Year and Quarter</caption>
   <thead>
     <tr>
-      <th scope="col">Mark Read</th>
+      <th scope="col">Mark As Corrected</th>
       <th scope="col">Year</th>
       <th scope="col">Month</th>
       <th scope="col">Item Number</th>
@@ -346,12 +337,11 @@
       <th scope="row"> <div class="usa-checkbox" style="background: none;">
     <input
       class="usa-checkbox__input"
-      id="check-historical-truth"
+      id="5"
       type="checkbox"
       name="historical-figures"
-      value=""
-    />
-    <label class="usa-checkbox__label" for="check-historical-truth"
+      value=""/>
+    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="check-historical-truth"
       ></label>
   </div></th>
       <td>
@@ -366,7 +356,16 @@
 
     </tr>
     <tr>
-      <th scope="row">FY Q2</th>
+            <th scope="row"> <div class="usa-checkbox" style="background: none;">
+    <input
+      class="usa-checkbox__input"
+      id="check-historical-truth"
+      type="checkbox"
+      name="historical-figures"
+      value=""/>
+    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="check-historical-truth"
+      ></label>
+  </div></th>
       <td>
         FY Q3
       </td>
@@ -378,7 +377,16 @@
       </td>
     </tr>
     <tr>
-      <th scope="row">FY Q3</th>
+            <th scope="row"> <div class="usa-checkbox" style="background: none;">
+    <input
+      class="usa-checkbox__input"
+      id="check-historical-truth"
+      type="checkbox"
+      name="historical-figures"
+      value=""/>
+    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="check-historical-truth"
+      ></label>
+  </div></th>
       <td>
         FY Q4
       </td>
@@ -390,7 +398,16 @@
       </td>
 
           <tr>
-      <th scope="row">FY Q4</th>
+            <th scope="row"> <div class="usa-checkbox" style="background: none;">
+    <input
+      class="usa-checkbox__input"
+      id="check-historical-truth"
+      type="checkbox"
+      name="historical-figures"
+      value=""/>
+    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="check-historical-truth"
+      ></label>
+  </div></th>
       <td>
         Following FY Q1
       </td>
