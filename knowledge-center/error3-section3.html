@@ -179,8 +179,9 @@
      <div id="column2" style="display: flex-row; float: right; max-width: 60%; margin-left: 62px;"> 
                        <label class="usa-label" for="options"><strong>Section</strong></label>
   <select class="usa-select" name="options" id="section-options"> 
+            <option value="section3">Section 3 - Aggregate Data</option>
     <option value="section1">Section 1 - Active Case Data</option>
-        <option value="section3">Section 3 - Aggregate Data</option>
+
 
   </select>
      </div> 
@@ -220,159 +221,10 @@
 
       aria-controls="et-1"
     >
-      2025 October  |  T7 Item 4 (TDRS Section Indicator): 7 is not in [1, 2]  |  Record value invalid
-    </button>
-  </h4>
-  <div id="et-1" class="usa-accordion__content usa-prose">
-    <p><span style="font-weight: 800; font-size: 1.3rem;">Error Message: </span><br>T3 Item 60 (Family): value must be [1, 2, 4]</p>
-            <table class="usa-table">
-  <thead>
-    <tr>
-   
-      <th scope="col">Year</th>
-      <th scope="col">Month</th>
-      <th scope="col">Item Number</th>
-            <th scope="col">Item Name</th>
-                        <th scope="col">Internal Variable Name</th>
-                  <th scope="col">Error Type</th>
-
-
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-    <!--   <th scope="row"> <div class="usa-checkbox" style="background: none;">
-    <input
-      class="usa-checkbox__input"
-      id="1"
-      type="checkbox"
-      name="historical-figures"
-      value=""/>
-    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="1"
-      ></label>
-  </div></th> -->
-      <td>
-        2024
-      </td>
-      <td>
-        October
-      </td>
-      <td>
-        41
-      </td>
-      <td>Education Level</td>
-            <td>EDUCATION_LEVEL</td>
-        <td>Record value invalid</td>
-      
-
-
-    </tr>
-
-      
-  </tbody>
-</table>
-
-    <p style="max-width: none;"><span style="font-weight: 800; font-size: 1.3rem;">Error Summary: </span><br>Since the individual is a parent of a minor child in the TANF family receiving assistance (Item 30 = 2), then reporting Education Level (Item 41) is required, and code 99 is not an option. Education Level must be between 0 and 16, or must be reported as code 98 (no formal education).<br><span style="font-weight: 800;">Family Affiliation</span><br><br>If the individual is both a parent and caretaker, then they should be coded as a parent.<br><br>Enter the one-digit code:<br><br>1 = Receiving TANF assistance Not receiving TANF assistance but in the family<br>
-2 = Parent of minor child in the TANF family receiving assistance <br>
-3 = Caretaker relative of minor child in the TANF family receiving assistance <br>
-5 = Person whose income or resources are considered in determining eligibility for or amount of assistance <br></p>
-
-  <table class="usa-table">
-  <thead>
-    <tr>
-   
-      <th scope="col">Mark As Corrected</th>
-      <th scope="col">Case Number</th>
-      <th scope="col">Row Number</th>
-        
-
-
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-     <th scope="row"> <div class="usa-checkbox" style="background: none;">
-    <input
-      class="usa-checkbox__input"
-      id="c1"
-      type="checkbox"
-      name="historical-figures"
-      value=""/>
-    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="c1"
-      ></label>
-  </div></th> 
-      <td>
-        123456789
-      </td>
-      <td>
-        41
-      </td>
-          <tr>
-     <th scope="row"> <div class="usa-checkbox" style="background: none;">
-    <input
-      class="usa-checkbox__input"
-      id="c2"
-      type="checkbox"
-      name="historical-figures"
-      value=""/>
-    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="c2"
-      ></label>
-  </div></th> 
-      <td>
-        123456789
-      </td>
-      <td>
-        47
-      </td>
-          <tr>
-     <th scope="row"> <div class="usa-checkbox" style="background: none;">
-    <input
-      class="usa-checkbox__input"
-      id="c3"
-      type="checkbox"
-      name="historical-figures"
-      value=""/>
-    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="c3"
-      ></label>
-  </div></th> 
-      <td>
-        123456789
-      </td>
-      <td>
-        58
-      </td>
-    </tr>
-
-      
-  </tbody>
-</table>
-
-
-  </div>
-  <!-- Bottom of accordion  -->
-
-</div>
-
-  
-</div>
-   
-
-<div id="case-num-results">
-
-       <div class="usa-accordion usa-accordion--multiselectable" data-allow-multiple>
-  <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-
-      aria-controls="m-a1"
-    >
       012345689 | 1 Error
     </button>
   </h4>
-  <div id="m-a1" class="usa-accordion__content usa-prose">
+  <div id="et-1" style="border: #ccc 1px solid; border-top: 0px;" class="usa-accordion__content usa-prose">
     <p><span style="font-weight: 800; font-size: 1.3rem;">Error Message: </span><br>T3 Item 60 (Family): value must be [1, 2, 4]</p>
             <table class="usa-table">
   <thead>
@@ -418,31 +270,7 @@
 
 
     </tr>
-<!--     <tr>
-      <th scope="row"> <div class="usa-checkbox" style="background: none;">
-    <input
-      class="usa-checkbox__input"
-      id="2"
-      type="checkbox"
-      name="historical-figures"
-      value=""/>
-    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="2"
-      ></label>
-  </div></th>           <td>
-        2024
-      </td>
-      <td>
-        December
-      </td>
-      <td>
-        60
-      </td>
-      <td>Family Affiliation</td>
-            <td>FAMILY_AFFILIATION</td>
-        <td>509</td>
-        <td>Record value invalid</td>
-    </tr> -->
-    
+
       
   </tbody>
 </table>
@@ -451,22 +279,29 @@
 
 
   </div>
+
+</div>
+
+  
+</div>
+   
+
+<div id="case-num-results">
+
+       <div class="usa-accordion usa-accordion--multiselectable" data-allow-multiple>
   <h4 class="usa-accordion__heading">
     <button
       type="button"
       class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a2"
+
+      aria-controls="m-a1"
     >
-      012345689 | 3 Errors
+      012345689 | 1 Error
     </button>
   </h4>
-  <div id="m-a2" class="usa-accordion__content usa-prose">
-    <p>
-     sdfsdfsfsfsfdsfsdf
-    </p>
-                <table class="usa-table">
-          <caption>Identifying the right Fiscal Year and Quarter</caption>
+  <div id="m-a1" style="border: #ccc 1px solid; border-top: 0px;" class="usa-accordion__content usa-prose">
+    <p style="max-width: none;"><span style="font-weight: 800; font-size: 1.3rem;">Error Message: </span><br>T1: The sum of ('Amount of SNAP Benefits', 'Amount of Subsidized Child Care', 'Cash Amount', 'Child Care Amount', 'Transportation and Other Supportive Services: Amount') is not larger than 0.</p>
+            <table class="usa-table">
   <thead>
     <tr>
       <th scope="col">Mark As Corrected</th>
@@ -474,7 +309,7 @@
       <th scope="col">Month</th>
       <th scope="col">Item Number</th>
             <th scope="col">Item Name</th>
-      <th scope="col">Internal Variable Name</th>
+                        <th scope="col">Internal Variable Name</th>
             <th scope="col">Row</th>
                   <th scope="col">Error Type</th>
 
@@ -487,91 +322,176 @@
       <th scope="row"> <div class="usa-checkbox" style="background: none;">
     <input
       class="usa-checkbox__input"
-      id="5"
+      id="2"
       type="checkbox"
       name="historical-figures"
       value=""/>
-    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="check-historical-truth"
+    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="2"
       ></label>
   </div></th>
       <td>
-        FY Q2
+        2024
       </td>
       <td>
-        FY Q1, October - December 
+        October
       </td>
       <td>
-        May 15
+        34A
       </td>
+      <td>Transportation and Other Supportive Services</td>
+            <td>TRANSP_AMOUNT</td>
+        <td>9</td>
+        <td>Record value invalid</td>
+
 
     </tr>
-    <tr>
-            <th scope="row"> <div class="usa-checkbox" style="background: none;">
-    <input
-      class="usa-checkbox__input"
-      id="check-historical-truth"
-      type="checkbox"
-      name="historical-figures"
-      value=""/>
-    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="check-historical-truth"
-      ></label>
-  </div></th>
-      <td>
-        FY Q3
-      </td>
-      <td>
-        FY Q2, January - March
-      </td>
-      <td>
-        August 14
-      </td>
-    </tr>
-    <tr>
-            <th scope="row"> <div class="usa-checkbox" style="background: none;">
-    <input
-      class="usa-checkbox__input"
-      id="check-historical-truth"
-      type="checkbox"
-      name="historical-figures"
-      value=""/>
-    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="check-historical-truth"
-      ></label>
-  </div></th>
-      <td>
-        FY Q4
-      </td>
-      <td>
-        FY Q3, April - June
-      </td>
-      <td>
-        November 14
-      </td>
 
-          <tr>
-            <th scope="row"> <div class="usa-checkbox" style="background: none;">
-    <input
-      class="usa-checkbox__input"
-      id="check-historical-truth"
-      type="checkbox"
-      name="historical-figures"
-      value=""/>
-    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="check-historical-truth"
-      ></label>
-  </div></th>
-      <td>
-        Following FY Q1
-      </td>
-      <td>
-        FY Q4, July - September
-      </td>
-      <td>
-        February 14
-      </td>
-
-    </tr>
       
   </tbody>
 </table>
+
+    <p style="max-width: none;"><span style="font-weight: 800; font-size: 1.3rem;">Error Summary: </span><br>A value greater than 0 is expected for Item 23A (Transportation and Other Supportive Services).</p>
+
+    <div style="display: flex;">
+     <div id="column1" style="min-width: 50%; display: flex; margin-right: 16px; border: solid 1px #ccc; padding: 16px;">
+           <p><span style="font-weight: 800;">T1: </span>A value greater than 0 is expected for Item 23A (Transportation and Other Supportive Services)<br><br><span style="font-weight: 800;">Description: </span>Family-level data for a specific month the family is receiving assistance.<br><br><span style="font-weight: 800;">Associated Section: </span>Section 1 (Active Case Data)</p>
+
+
+
+     </div>
+
+     <div id="column2" style="display: flex-row; float: right; max-width: 50%; border: solid 1px #ccc; padding: 16px">    
+     <p><span style="font-weight: 800;">Item 23: Transportation and Other Supportive Services</span><br>A TANF transportation benefit or other supportive service that is received by an employed family is not assistance and should not be reported in this item. Unless excluded as a non-recurring, short-term benefit, a transportation benefit that is received by a non-employed family is assistance and should be reported here.<br><br>A. Amount<br>B. Number of Months</p>
+     </div>
+</div>
+
+  </div>
+  <h4 class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="m-a2"
+    >
+      012345689 | 3 Errors
+    </button>
+  </h4>
+  <div id="m-a2" style="border: #ccc 1px solid; border-top: 0px;" class="usa-accordion__content usa-prose">
+    <p><span style="font-weight: 800; font-size: 1.3rem;">Error Message: </span><br>T3 Item 60 (Family): value must be [1, 2, 4]</p>
+            <table class="usa-table">
+  <thead>
+    <tr>
+      <th scope="col">Mark As Corrected</th>
+      <th scope="col">Year</th>
+      <th scope="col">Month</th>
+      <th scope="col">Item Number</th>
+            <th scope="col">Item Name</th>
+                        <th scope="col">Internal Variable Name</th>
+            <th scope="col">Row</th>
+                  <th scope="col">Error Type</th>
+
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"> <div class="usa-checkbox" style="background: none;">
+    <input
+      class="usa-checkbox__input"
+      id="20"
+      type="checkbox"
+      name="historical-figures"
+      value=""/>
+    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="20"
+      ></label>
+  </div></th>
+      <td>
+        2024
+      </td>
+      <td>
+        October
+      </td>
+      <td>
+        41
+      </td>
+      <td>Education Level</td>
+            <td>EDUCATION_LEVEL</td>
+        <td>9</td>
+        <td>Record value consistency</td>
+    </tr>
+        <tr>
+      <th scope="row"> <div class="usa-checkbox" style="background: none;">
+    <input
+      class="usa-checkbox__input"
+      id="21"
+      type="checkbox"
+      name="historical-figures"
+      value=""/>
+    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="21"
+      ></label>
+  </div></th>
+      <td>
+        2024
+      </td>
+      <td>
+        November
+      </td>
+      <td>
+        41
+      </td>
+      <td>Education Level</td>
+            <td>EDUCATION_LEVEL</td>
+        <td>45</td>
+        <td>Record value consistency</td>
+    </tr>
+            <tr>
+      <th scope="row"> <div class="usa-checkbox" style="background: none;">
+    <input
+      class="usa-checkbox__input"
+      id="22"
+      type="checkbox"
+      name="historical-figures"
+      value=""/>
+    <label class="usa-checkbox__label" style="margin-top: 0px;margin-bottom: 14px;" for="22"
+      ></label>
+  </div></th>
+      <td>
+        2024
+      </td>
+      <td>
+        December
+      </td>
+      <td>
+        41
+      </td>
+      <td>Education Level</td>
+            <td>EDUCATION_LEVEL</td>
+        <td>82</td>
+        <td>Record value consistency</td>
+    </tr>
+
+      
+  </tbody>
+</table>
+
+    <p style="max-width: none;"><span style="font-weight: 800; font-size: 1.3rem;">Error Summary: </span><br>Since the individual is a parent of a minor child in the TANF family receiving assistance (Item 30 = 2), then reporting Education Level (Item 41) is required, and code 99 is not an option. Education Level must be between 0 and 16, or must be reported as code 98 (no formal education).</p>
+
+     <div style="display: flex;">
+     <div id="column1" style="max-width: 50%; display: flex; margin-right: 16px; border: solid 1px #ccc; padding: 16px;">
+         <p><span style="font-weight: 800;">Item 48: Work-eligible (WEI)</span><br> Work-eligible individual (WEI) means an adult receiving assistance under TANF or a non-recipient parent living with a child receiving such assistance unless the parent is: (1) a minor parent and not the head-of-household; (2) ineligible to receive assistance due to his or her immigration status; or (3) at state option on a case-by-case basis, a recipient of Supplemental Security Income (SSI) benefits or Aid to the Aged, Blind, or Disabled (AABD) in the territories. The term also excludes: (1) a parent providing care for a disabled family member living in the home, provided that there is medical documentation to support the need for the parent to remain in the home to care for the disabled family member; (2) at state option on a case-by-case basis, a parent who is a recipient of Social Security Disability Insurance (SSDI) benefits; and (3) an individual in a family receiving MOE-funded assistance under an approved Tribal TANF program, unless the state includes the Tribal family in calculating work participation rates, as permitted under section 45 CFR 261.25.</p>
+
+
+
+     </div>
+
+     <div id="column2" style="display: flex-row; float: right; max-width: 50%; border: solid 1px #ccc; padding: 16px">    
+     <p><span style="font-weight: 800;">Item 33: Social Security Number</span><br>Enter the nine-digit Social Security Number (SSN) for the adult. If the family affiliation code (item #30) code is 1 or 2, the state must provide the SSN, unless family affiliation is 2 with no SSN due to immigration status. If the family affiliation code is not 1 or 2, enter 999999999.</p>
+     </div>
+</div>
+
+  </div>
+
 
 </div>
 </div>
@@ -621,8 +541,8 @@
 
 <script>
   document.getElementById("section-options").addEventListener("change", function() {
-    if (this.value === "section3") {
-      window.location.href = "error3-section3.html";
+    if (this.value === "section1") {
+      window.location.href = "error3.html";
     }
   });
 </script>
