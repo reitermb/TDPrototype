@@ -247,7 +247,7 @@
       <th scope="row"> <div class="usa-checkbox" style="background: none;">
     <input
       class="usa-checkbox__input"
-      id="1"
+      id="31"
       type="checkbox"
       name="historical-figures"
       value=""/>
@@ -322,7 +322,7 @@
       <th scope="row"> <div class="usa-checkbox" style="background: none;">
     <input
       class="usa-checkbox__input"
-      id="2"
+      id="32"
       type="checkbox"
       name="historical-figures"
       value=""/>
@@ -512,6 +512,29 @@
 
 
   <footer class="usa-footer usa-footer--slim">
+
+       <script>
+  // List of checkbox IDs
+        window.addEventListener('DOMContentLoaded', () => {
+
+  const checkboxIds = ['31', '32'];
+
+     checkboxIds.forEach(id => {
+      const cb = document.getElementById(id);
+      if (!cb) {
+        console.warn(`Checkbox with ID "${id}" not found.`);
+        return;
+      }
+
+      cb.checked = localStorage.getItem(id) === 'true';
+
+      cb.addEventListener('change', () => {
+        localStorage.setItem(id, cb.checked);
+      });
+    });
+  });
+
+</script>
 
 <script>
   document.getElementById("expandAll").addEventListener("click", function() {
