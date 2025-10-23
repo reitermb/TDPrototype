@@ -348,6 +348,23 @@
   </tbody>
 </table>
 
+<script>
+  // List of checkbox IDs
+  const checkboxIds = ['1', '2', '3','20','21','22','23'];
+
+  // Restore state on page load
+  checkboxIds.forEach(id => {
+    const cb = document.getElementById(id);
+    cb.checked = localStorage.getItem(id) === 'true';
+
+    // Save state on change
+    cb.addEventListener('change', () => {
+      localStorage.setItem(id, cb.checked);
+    });
+  });
+</script>
+
+
     <p style="max-width: none;"><span style="font-weight: 800; font-size: 1.3rem;">Error Summary: </span><br>A value greater than 0 is expected for Item 23A (Transportation and Other Supportive Services).</p>
 
     <div style="display: flex;">
