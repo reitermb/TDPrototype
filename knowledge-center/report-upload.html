@@ -9,84 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../js/uswds.min.js"></script>
-    <style>
-      /* Base input styling (approximate USWDS) */
-.usa-input {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 20rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #71767a;
-  border-radius: 0;
-  font: inherit;
-  background-color: #fff;
-  color: #1b1b1b;
-}
-
-/* Focus outline similar to USWDS */
-.usa-input:focus {
-  outline: 2px solid #2491ff;
-  outline-offset: 0;
-  box-shadow: 0 0 0 2px #2491ff;
-}
-
-/* Error state */
-.usa-input--error {
-  border-color: #b50909;
-}
-
-.usa-form-group--error .usa-label {
-  color: #b50909;
-}
-
-.usa-error-message {
-  display: block;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  color: #b50909;
-  font-size: 0.875rem;
-}
-
-/* Date picker wrapper */
-.usa-date-picker {
-  position: relative;
-  display: inline-block;
-}
-
-/* Remove native date icon where possible and add custom icon */
-.usa-input--date {
-  /* Add right padding to make room for icon */
-  padding-right: 2.5rem;
-}
-
-/* Hide native calendar icon in WebKit */
-.usa-input--date::-webkit-calendar-picker-indicator {
-  opacity: 0;
-  cursor: pointer;
-}
-
-
-
-/* Ensure input and icon align nicely */
-.usa-date-picker--native {
-  max-width: 20rem;
-}
-
-/* Hint text */
-.usa-hint {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  font-size: 0.875rem;
-  color: #565c65;
-}
-
-/* Label */
-.usa-label {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-weight: 700;
-}
-    </style>
 
   </head>
 
@@ -395,15 +317,10 @@
 
   <!-- <a class="usa-button usa-button--outline" href="Work-Outcomes-Template.xlsx" type="button" style="margin-top: 16px; margin-bottom: 32px; text-decoration: none;">Download Report Template</a> -->
 
-     <div class="usa-form-group--error">
+     <div class="usa-form-group">
   <label class="usa-label" for="file-input-single"
     ><strong>Feedback Reports ZIP*</strong></label
   >
-      <span class="usa-error-message" id="file-input-error-alert">Invalid file. Make sure to select a zip file.</span>
-      <span class="usa-error-message" id="file-input-error-alert">No file selected.</span>
-      <span class="usa-error-message" id="file-input-error-alert">Your file's Fiscal Year does not match the selected Fiscal Year for this upload.</span>
-      
-
   <input
     id="file-input-single"
     class="usa-file-input"
@@ -411,48 +328,17 @@
     name="file-input-single"
   />
 </div>
-<<<<<<< Updated upstream
-<div style="margin-top: 16px;;"></div>
-<div class="usa-form-group--error">
-  <label class="usa-label--error" id="appointment-date-label" for="appointment-date"
-    ><strong>Data extracted from database on</strong></label
-=======
 
 <div class="usa-form-group">
   <label class="usa-label" id="appointment-date-label" for="appointment-date"
     ><strong>Data extracted from database on*</strong></label
->>>>>>> Stashed changes
   >
   <div class="usa-hint" id="appointment-date-hint">mm/dd/yyyy</div>
-    <span class="usa-error-message" id="file-input-error-alert">Choose the date that the data you're uploading was extracted from the database.</span>
   <div class="usa-date-picker">
     <input
-      class="usa-input--error"
+      class="usa-input"
       id="appointment-date"
       name="appointment-date"
-      aria-labelledby="appointment-date-label"
-      aria-describedby="appointment-date-hint"
-    />
-  </div>
-</div>
-<label for="event-date" class="usa-label"><strong>Event Date:</strong></label>
- <div class="usa-hint" id="appointment-date-hint">mm/dd/yyyy</div>
-<input class="usa-input" type="date" id="event-date" name="event-date">
-
-<div class="usa-form-group">
-  <label class="usa-label" id="appointment-date-label" for="appointment-date">
-    Appointment date
-  </label>
-  <div class="usa-hint" id="appointment-date-hint">
-    mm/dd/yyyy
-  </div>
-
-  <div class="usa-date-picker usa-date-picker--native">
-    <input
-      class="usa-input usa-input--date"
-      id="appointment-date"
-      name="appointment-date"
-      type="date"
       aria-labelledby="appointment-date-label"
       aria-describedby="appointment-date-hint"
     />
@@ -481,10 +367,9 @@
  <table class="usa-table">
   <thead>
     <tr>
-      <th scope="col">Feedback Uploaded On</th>
-             <th scope="col">Data Extracted On</th>
-      <th scope="col">Notificatons Sent On</th>
-
+      <th scope="col">Fiscal year</th>
+      <th scope="col">Feedback uploaded on</th>
+       <th scope="col">Notifications sent on</th>
             <th scope="col">File</th>
             <th scope="col">Downloaded by</th>
 
@@ -492,9 +377,9 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">03/05/2025 10:31 AM</th>
+      <th scope="row">2025</th>
       <td>
-        02/28/2025
+        03/05/2025 10:31 AM
       </td>
        <td>
         03/05/2025 10:41 AM
@@ -507,13 +392,13 @@
       </td>
 
  <tr>
-      <th scope="row">12/30/2024 3:26 PM</th>
+      <th scope="row">2025</th>
 
      <td>
-        12/15/2024
+        01/08/2025 9:41 AM
       </td>
            <td>
-        12/30/2025 4:00 PM
+        01/08/2025 9:48 AM
       </td>
 
       <td>
