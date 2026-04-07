@@ -242,8 +242,40 @@
         <p class="usa-intro">TANF WPR, SSP WPR, TANF & SSP Combined, and Time Limit Reports</p>
         <p>Once submitted, TDP will distribute feedback reports to TANF/SSP submission history pages of each state and notify users that feedback reports are available. There may be several minutes between when the ZIP is uploaded and when all notifications have been sent as TDP processes the reports.</p>
 
-    <label class="usa-label" for="options" style="margin-top: 32px;"><strong>Fiscal Year</strong></label>
-  <select class="usa-select" name="options" id="options">
+<form class="usa-form" style="min-width: 100%;">
+  <fieldset class="usa-fieldset">
+  <legend class="usa-legend usa-legend"><strong>Feedback Report Type*</strong></legend>
+  <div class="usa-radio">
+    <input
+      class="usa-radio__input"
+      id="historical-truth"
+      type="radio"
+      name="historical-figures"
+      value="sojourner-truth"
+      checked="checked"
+    />
+    <label class="usa-radio__label" for="historical-truth"
+      >TANF/SSP</label
+    >
+  </div>
+  <div class="usa-radio">
+    <input
+      class="usa-radio__input"
+      id="historical-douglass"
+      type="radio"
+      name="historical-figures"
+      value="frederick-douglass"
+    />
+    <label class="usa-radio__label" for="historical-douglass"
+      >FRA</label
+    >
+  </div>
+
+
+</fieldset>
+
+    <label class="usa-label" for="options" style="margin-top: 32px;"><strong>Fiscal Year*</strong></label>
+  <select class="usa-select" name="options" id="options" style="max-width: 40%;">
     <option value>- Select -</option>
     <option value="value1">2025</option>
         <option value="value1">2026</option>
@@ -365,7 +397,7 @@
 
      <div class="usa-form-group--error">
   <label class="usa-label" for="file-input-single"
-    ><strong>Feedback Reports ZIP</strong></label
+    ><strong>Feedback Reports ZIP*</strong></label
   >
       <span class="usa-error-message" id="file-input-error-alert">Invalid file. Make sure to select a zip file.</span>
       <span class="usa-error-message" id="file-input-error-alert">No file selected.</span>
@@ -379,10 +411,17 @@
     name="file-input-single"
   />
 </div>
+<<<<<<< Updated upstream
 <div style="margin-top: 16px;;"></div>
 <div class="usa-form-group--error">
   <label class="usa-label--error" id="appointment-date-label" for="appointment-date"
     ><strong>Data extracted from database on</strong></label
+=======
+
+<div class="usa-form-group">
+  <label class="usa-label" id="appointment-date-label" for="appointment-date"
+    ><strong>Data extracted from database on*</strong></label
+>>>>>>> Stashed changes
   >
   <div class="usa-hint" id="appointment-date-hint">mm/dd/yyyy</div>
     <span class="usa-error-message" id="file-input-error-alert">Choose the date that the data you're uploading was extracted from the database.</span>
@@ -419,6 +458,16 @@
     />
   </div>
 </div>
+
+<label id="notes-hint" class="usa-label" for="input-type-textarea"><strong>Notes (optional)</strong></label>
+  <div class="usa-hint" id="notes-hint" style="max-width: 470px;">Notes will be displayed to STTs when additional detail is needed to contextualize a report</div>
+
+<textarea
+  class="usa-textarea"
+  id="input-type-textarea"
+  name="input-type-textarea"
+  style="max-width: 470px;"
+></textarea>
 
 
   <a class="usa-button" href="submitted3.html#submission" type="button" style="margin-top: 16px; color: white; text-decoration: none;">Upload & Notify States</a>
