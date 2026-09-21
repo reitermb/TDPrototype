@@ -9,7 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../js/uswds.min.js"></script>
-
+<style>
+  .usa-modal__main {
+    margin: 0px !important;
+  }
+</style>
   </head>
 
 
@@ -268,7 +272,7 @@
 
 
   <!-- <a class="usa-button" href="submitted3.html#submission" type="button" style="margin-top: 16px; color: white; text-decoration: none;">Submit & Notify States</a> -->
-              <h2>Alabama — Fiscal Year 2025 Feedback Reports</h2>
+              <h2 id="alabama">Alabama — Fiscal Year 2025 Feedback Reports</h2>
 
 
 <p>
@@ -289,6 +293,7 @@ Feedback reports are produced cumulatively throughout each fiscal year. Each ZIP
       <th scope="col">Generated on</th>
             <th scope="col">Reflects data submitted through</th>
             <th scope="col">Files</th>
+            <th scope="col">Notes</th>
 
     </tr>
   </thead>
@@ -302,7 +307,17 @@ Feedback reports are produced cumulatively throughout each fiscal year. Each ZIP
         02/28/2025
       </td>
       <td>
-        <a href="">FY 2025 Feedback Reports - Reflects data submitted through 2/28/2025.zip</a>
+        <a href="">FY2025.zip</a>
+      </td>
+   <td>
+ <span>Reports regenerated to correct for the lorem ipsum issue in the dolor sit amet report. This change updates the reporting to better reflect when the cha...</span>
+<a
+  href="#notes-modal"
+  aria-controls="notes-modal"
+  data-open-modal
+>Read more</a>
+  
+
       </td>
 
 
@@ -319,6 +334,151 @@ Feedback reports are produced cumulatively throughout each fiscal year. Each ZIP
 
 
   </div>
+  <div
+  class="usa-modal"
+  id="notes-modal"
+  aria-labelledby="notes-modal-heading"
+  aria-describedby="notes-modal-description"
+  role="dialog"
+  aria-modal="true"
+  hidden
+  style="
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+    transform: none !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    z-index: 99999 !important;
+    align-items: center !important;
+    justify-content: center !important;
+  "
+>
+  <div 
+    class="usa-modal__content" 
+    style="
+      background-color: #fff; 
+      padding: 24px; 
+      border-radius: 8px; 
+      max-width: 600px; 
+      width: 90%; 
+      max-height: 85vh; 
+      overflow-y: auto; 
+      position: relative;
+      margin: 0 !important;
+    "
+  >
+    <div class="usa-modal__main">
+      <h2 class="usa-modal__heading" id="notes-modal-heading">
+        Submission Notes
+      </h2>
+      <div class="usa-prose" id="notes-modal-description" style="margin-top: 16px;">
+        <p><strong>File:</strong> <a href="">FY2025.zip</a></p>
+        <hr style="margin: 16px 0;">
+        <p>
+          Reports regenerated to correct for the lorem ipsum issue in the dolor sit amet report. This change updates the reporting to better reflect when the change occurred.
+        </p>
+      </div>
+
+      <div class="usa-modal__footer" style="margin-top: 24px;">
+        <ul class="usa-button-group">
+          <li class="usa-button-group__item">
+            <button type="button" class="usa-button" data-close-modal>
+              Close
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="usa-button usa-modal__close"
+      aria-label="Close this window"
+      data-close-modal
+      style="position: absolute; top: 12px; right: 12px;"
+    >
+      <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+        <use href="/assets/img/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    function getTargetModalId(el) {
+      var fromAria = el.getAttribute('aria-controls');
+      if (fromAria) return fromAria;
+      var href = el.getAttribute('href') || '';
+      if (href.startsWith('#')) return href.slice(1);
+      try { 
+        var u = new URL(href, window.location.href); 
+        return (u.hash || '').slice(1); 
+      } catch (_) { 
+        return null; 
+      }
+    }
+
+    function openModal(modal) {
+      if (!modal) return;
+      modal.removeAttribute('hidden');
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      var focusable = modal.querySelector('[autofocus], .usa-modal__close, button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (focusable && typeof focusable.focus === 'function') focusable.focus();
+    }
+
+    function closeModal(modal) {
+      if (!modal) return;
+      modal.setAttribute('hidden', '');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', function (e) {
+      var opener = e.target.closest('[data-open-modal]');
+      if (opener) {
+        e.preventDefault();
+        var id = getTargetModalId(opener);
+        var modal = id ? document.getElementById(id) : null;
+        openModal(modal);
+        return;
+      }
+
+      var closer = e.target.closest('[data-close-modal]');
+      if (closer) {
+        e.preventDefault();
+        var modalToClose = closer.closest('.usa-modal');
+        closeModal(modalToClose);
+        return;
+      }
+
+      var openModalEl = document.querySelector('.usa-modal:not([hidden])');
+      if (openModalEl && e.target === openModalEl) {
+        closeModal(openModalEl);
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        var visibleModal = document.querySelector('.usa-modal:not([hidden])');
+        if (visibleModal) {
+          e.preventDefault();
+          closeModal(visibleModal);
+        }
+      }
+    });
+  })();
+</script>
 
   <footer class="usa-footer usa-footer--slim">
   <div class="grid-container usa-footer__return-to-top">
