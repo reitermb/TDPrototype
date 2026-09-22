@@ -376,7 +376,7 @@ Feedback reports are produced cumulatively throughout each fiscal year. Each ZIP
     "
   >
     <div class="usa-modal__main">
-      <h2 class="usa-modal__heading" id="notes-modal-heading">
+      <h2 class="usa-modal__heading" id="notes-modal-heading" tabindex="-1"" style="outline: none;">
         Submission Notes
       </h2>
       <div class="usa-prose" id="notes-modal-description" style="margin-top: 16px;">
@@ -426,15 +426,22 @@ Feedback reports are produced cumulatively throughout each fiscal year. Each ZIP
       }
     }
 
-    function openModal(modal) {
-      if (!modal) return;
-      modal.removeAttribute('hidden');
-      modal.style.display = 'flex';
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      var focusable = modal.querySelector('[autofocus], .usa-modal__close, button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-      if (focusable && typeof focusable.focus === 'function') focusable.focus();
-    }
+function openModal(modal) {
+  if (!modal) return;
+  modal.removeAttribute('hidden');
+  modal.style.display = 'flex';
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+
+  // Prioritize heading focus for screen readers; fall back to interactive elements
+  var heading = modal.querySelector('.usa-modal__heading');
+  if (heading && typeof heading.focus === 'function') {
+    heading.focus();
+  } else {
+    var focusable = modal.querySelector('[autofocus], .usa-modal__close, button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (focusable && typeof focusable.focus === 'function') focusable.focus();
+  }
+}
 
     function closeModal(modal) {
       if (!modal) return;

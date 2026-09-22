@@ -520,7 +520,7 @@
     "
   >
     <div class="usa-modal__main">
-      <h2 class="usa-modal__heading" id="modal-1-heading">
+      <h2 class="usa-modal__heading" id="modal-1-heading" tabindex="-1"" style="outline: none;">
         Download Statistics
       </h2>
 
@@ -533,14 +533,24 @@
         </div>
       </div>
 
+  
       <div class="usa-prose">
        <table class="usa-table usa-table--borderless" id="modal-1-description" style="width: 100%;">
-  <thead>
+  <thead style="position: sticky; 
+    top: -24px; 
+    z-index: 10; 
+    background-color: #ffffff; 
+    cursor: pointer; 
+    user-select: none; 
+    padding-top: 24px; 
+    padding-bottom: 12px;
+    box-shadow: inset 0 -2px 0 #1b1b1b; 
+  ">
     <tr>
-      <th scope="col" id="col-jurisdiction" style="cursor: pointer; user-select: none;" title="Click to sort within Regions by Name">
+      <th scope="col" id="col-jurisdiction" style="cursor: pointer; user-select: none; box-shadow: inset 0 -2px 0 #1b1b1b;" title="Click to sort within Regions by Name">
         STT <span class="sort-icon">▲</span>
       </th>
-      <th scope="col" id="col-status" style="cursor: pointer; user-select: none;" title="Click to sort within Regions by Status / Timestamp">
+      <th scope="col" id="col-status" style="cursor: pointer; user-select: none; box-shadow: inset 0 -2px 0 #1b1b1b;" title="Click to sort within Regions by Status / Timestamp">
          	Downloaded by <span class="sort-icon"></span>
       </th>
     </tr>
@@ -572,7 +582,7 @@
     <tr class="region-row"><td>West Virginia</td><td>08/08/2026 10:22 AM EST</td></tr>
 
     <!-- Region 4: Southeast Sunbelt -->
-    <tr class="table-region-header"><td colspan="2" style="background-color: #f0f0f0; font-weight: bold;">Region 4</td></tr>
+    <tr class="table-region-header"><td colspan="2" style="background-color: #f0f0f0; font-weight: bold;"><div id="r4">Region 4</div></td></tr>
     <tr class="region-row"><td><a href="report-view-regional.html#alabama">Alabama</a></td><td>08/10/2026 02:10 PM EST</td></tr>
     <tr class="region-row"><td>Florida</td><td>08/10/2026 03:02 PM EST</td></tr>
     <tr class="region-row"><td>Georgia</td><td>08/10/2026 10:33 AM EST</td></tr>
@@ -699,7 +709,7 @@
     "
   >
     <div class="usa-modal__main">
-      <h2 class="usa-modal__heading" id="notes-modal-heading">
+      <h2 class="usa-modal__heading" id="notes-modal-heading" tabindex="-1"" style="outline: none;">
         Notes
       </h2>
       <div class="usa-prose" id="notes-modal-description" style="margin-top: 16px;">
@@ -734,6 +744,8 @@
   </div>
 </div>
 
+
+
 <script>
   (function () {
     var tbody = document.getElementById('jurisdictions-tbody');
@@ -741,6 +753,17 @@
     var colStatus = document.getElementById('col-status');
     
     var currentSort = { col: 'jurisdiction', dir: 'asc' };
+
+    function getTimestamp(text) {
+      if (text.includes('Not yet downloaded')) {
+        // Infinity acts as the latest possible point in time
+        return Infinity;
+      }
+      // Clean string (e.g. remove timezone abbreviations) and parse to epoch milliseconds
+      var cleanedText = text.replace(/\s+[A-Z]{3,4}$/, '');
+      var time = Date.parse(cleanedText);
+      return isNaN(time) ? Infinity : time;
+    }
 
     function sortWithinRegions(colType) {
       if (currentSort.col === colType) {
@@ -771,10 +794,18 @@
           var cellB = colType === 'jurisdiction' ? b.cells[0].textContent.trim() : b.cells[1].textContent.trim();
 
           if (colType === 'status') {
-            if (cellA.includes('Not yet downloaded')) return 1;
-            if (cellB.includes('Not yet downloaded')) return -1;
+            var timeA = getTimestamp(cellA);
+            var timeB = getTimestamp(cellB);
+
+            if (timeA === timeB) {
+              // Tie-breaker: sort alphabetically by state name if both are "Not yet downloaded"
+              return a.cells[0].textContent.trim().localeCompare(b.cells[0].textContent.trim());
+            }
+
+            return currentSort.dir === 'asc' ? timeA - timeB : timeB - timeA;
           }
 
+          // Default alphabetical sort for jurisdiction names
           var res = cellA.localeCompare(cellB);
           return currentSort.dir === 'asc' ? res : -res;
         });
@@ -798,6 +829,7 @@
     colStatus.addEventListener('click', function () { sortWithinRegions('status'); });
   })();
 </script>
+
 
 </body>
 
@@ -848,15 +880,22 @@
       try { var u = new URL(href, window.location.href); return (u.hash || '').slice(1); } catch (_) { return null; }
     }
 
-    function openModal(modal) {
-      if (!modal) return;
-      modal.removeAttribute('hidden');
-      modal.style.display = 'flex'; // Changed to 'flex' for vertical/horizontal centering
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      var focusable = modal.querySelector('[autofocus], .usa-modal__close, button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-      if (focusable && typeof focusable.focus === 'function') focusable.focus();
-    }
+   function openModal(modal) {
+  if (!modal) return;
+  modal.removeAttribute('hidden');
+  modal.style.display = 'flex';
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+
+  // Prioritize heading focus for screen readers; fall back to interactive elements
+  var heading = modal.querySelector('.usa-modal__heading');
+  if (heading && typeof heading.focus === 'function') {
+    heading.focus();
+  } else {
+    var focusable = modal.querySelector('[autofocus], .usa-modal__close, button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (focusable && typeof focusable.focus === 'function') focusable.focus();
+  }
+}
 
     function closeModal(modal) {
       if (!modal) return;
